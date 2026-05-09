@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小瑶的21岁生日小邮差</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="gate" class="screen gate-screen is-active" aria-labelledby="gate-title">
+      <div class="paper-card gate-card">
+        <p class="eyebrow">A tiny birthday parcel from the southern hemisphere</p>
+        <h1 id="gate-title">致 5.11 的小瑶</h1>
+        <p class="gate-copy">请输入你的名字，打开一封从很远很远、但心很近的生日信。</p>
+        <label class="name-label" for="name-input">收件人</label>
+        <div class="name-row">
+          <input id="name-input" autocomplete="off" placeholder="张曦瑶 / 瑶 / 小瑶">
+          <button id="start-btn" type="button">开启生日邮戳</button>
+        </div>
+        <p id="gate-message" class="gate-message" aria-live="polite"></p>
+      </div>
+      <div class="floating-note note-one">since 2011</div>
+      <div class="floating-note note-two">best friends, chosen family</div>
+    </section>
+
+    <section id="birthday" class="screen birthday-screen" aria-labelledby="birthday-title">
+      <div class="birthday-hero">
+        <div class="vinyl" aria-hidden="true"><span></span></div>
+        <div>
+          <p class="eyebrow">Unlocked for 张曦瑶</p>
+          <h2 id="birthday-title">生日快乐，亲爱的小瑶 ♉</h2>
+          <p style="margin-top: 12px;">
+            <span class="constellation" style="margin-right: 8px;">♉</span>
+            <span style="font-size: 0.9rem; color: var(--muted); letter-spacing: 0.05em;">Taurus • Born 2005.05.11</span>
+          </p>
+          <p>太平洋很宽，祝福会自己长翅膀。今天先把蜡烛点亮，再慢慢翻开我们的旧相册。</p>
+          <div class="button-row">
+            <button id="memory-btn" type="button">看我们的回忆</button>
+            <button id="music-btn" class="ghost-btn" type="button">音乐开 / 关</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="screen story-screen" aria-labelledby="story-title">
+      <header class="story-top">
+        <div>
+          <p class="eyebrow" id="stage-kicker">memory 01</p>
+          <h2 id="story-title">慢悠悠暖洋洋的童年</h2>
+        </div>
+        <div class="progress-wrap" aria-label="story progress">
+          <span id="progress-text">1 / 5</span>
+          <div class="progress-track"><span id="progress-bar"></span></div>
+        </div>
+      </header>
+
+      <div class="story-layout">
+        <figure class="photo-frame">
+          <img id="stage-image" src="XiYao_1.png" alt="memory photo">
+          <figcaption id="stage-caption">2011 开始，有些人一出现，就把童年变成会发光的底片。</figcaption>
+        </figure>
+        <article class="story-card">
+          <p id="stage-body"></p>
+          <div class="stage-thumbs" id="stage-thumbs" aria-label="photos in this chapter"></div>
+          <div class="button-row">
+            <button id="prev-btn" class="ghost-btn" type="button">上一页</button>
+            <button id="next-btn" type="button">继续往前走</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="screen gallery-screen" aria-labelledby="gallery-title">
+      <header class="gallery-top">
+        <div>
+          <p class="eyebrow">a pocket album</p>
+          <h2 id="gallery-title">这些年，被我们认真收藏过</h2>
+        </div>
+        <button id="letter-btn" type="button">打开最后一封信</button>
+      </header>
+      <div id="gallery-grid" class="gallery-grid" aria-label="all memories"></div>
+    </section>
+
+    <section id="letter" class="screen letter-screen" aria-labelledby="letter-title">
+      <div class="letter-wrap">
+        <p class="eyebrow">one and only</p>
+        <h2 id="letter-title">给我最好的朋友</h2>
+        <div id="letter-pages" class="letter-pages"></div>
+        <div class="button-row letter-actions">
+          <button id="reveal-letter-btn" type="button">继续读</button>
+          <button id="restart-btn" class="ghost-btn" type="button">再看一遍</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
