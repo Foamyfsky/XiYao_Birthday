@@ -3,99 +3,181 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>小瑶的21岁生日小邮差</title>
+  <title>小瑶的森林小屋</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app-shell">
-    <section id="gate" class="screen gate-screen is-active" aria-labelledby="gate-title">
-      <div class="paper-card gate-card">
-        <p class="eyebrow">A tiny birthday parcel from the southern hemisphere</p>
-        <h1 id="gate-title">致 5.11 的小瑶</h1>
-        <p class="gate-copy">请输入你的名字，打开一封从很远很远、但心很近的生日信。</p>
-        <label class="name-label" for="name-input">收件人</label>
-        <div class="name-row">
-          <input id="name-input" autocomplete="off" placeholder="张曦瑶 / 瑶 / 小瑶">
-          <button id="start-btn" type="button">开启生日邮戳</button>
-        </div>
-        <p id="gate-message" class="gate-message" aria-live="polite"></p>
-      </div>
-      <div class="floating-note note-one">since 2011</div>
-      <div class="floating-note note-two">best friends, chosen family</div>
-    </section>
-
-    <section id="birthday" class="screen birthday-screen" aria-labelledby="birthday-title">
-      <div class="birthday-hero">
-        <div class="vinyl" aria-hidden="true"><span></span></div>
-        <div>
-          <p class="eyebrow">Unlocked for 张曦瑶</p>
-          <h2 id="birthday-title">生日快乐，亲爱的小瑶 ♉</h2>
-          <p style="margin-top: 12px;">
-            <span class="constellation" style="margin-right: 8px;">♉</span>
-            <span style="font-size: 0.9rem; color: var(--muted); letter-spacing: 0.05em;">Taurus • Born 2005.05.11</span>
-          </p>
-          <p>太平洋很宽，祝福会自己长翅膀。今天先把蜡烛点亮，再慢慢翻开我们的旧相册。</p>
-          <div class="button-row">
-            <button id="memory-btn" type="button">看我们的回忆</button>
-            <button id="music-btn" class="ghost-btn" type="button">音乐开 / 关</button>
-          </div>
-        </div>
+  <main class="app" aria-live="polite">
+    <section id="welcome-screen" class="screen welcome-screen is-active" aria-labelledby="welcome-title">
+      <button id="open-envelope" class="pixel-envelope" type="button" aria-label="打开生日信封">
+        <span class="envelope-heart" aria-hidden="true"></span>
+      </button>
+      <div class="welcome-copy">
+        <p>给 5.11 的小瑶</p>
+        <h1 id="welcome-title">一封会动的生日小屋</h1>
+        <span>点一下心形信封，森林里的灯就会亮起来。</span>
       </div>
     </section>
 
-    <section id="story" class="screen story-screen" aria-labelledby="story-title">
-      <header class="story-top">
+    <section id="forest-screen" class="screen forest-screen" aria-labelledby="forest-title">
+      <div class="scene-sky" aria-hidden="true">
+        <span class="star star-one"></span>
+        <span class="star star-two"></span>
+        <span class="star star-three"></span>
+        <span class="moon"></span>
+      </div>
+
+      <header class="scene-header">
         <div>
-          <p class="eyebrow" id="stage-kicker">memory 01</p>
-          <h2 id="story-title">慢悠悠暖洋洋的童年</h2>
+          <p>pixel cottage companion</p>
+          <h2 id="forest-title">小瑶的森林小屋</h2>
         </div>
-        <div class="progress-wrap" aria-label="story progress">
-          <span id="progress-text">1 / 5</span>
-          <div class="progress-track"><span id="progress-bar"></span></div>
+        <button id="time-light" class="icon-button" type="button" title="切换小屋灯光" aria-label="切换小屋灯光">✦</button>
+      </header>
+
+      <div class="forest-stage" id="forest-stage">
+        <div class="ripple ripple-one" aria-hidden="true"></div>
+        <div class="ripple ripple-two" aria-hidden="true"></div>
+        <div class="ripple ripple-three" aria-hidden="true"></div>
+        <div class="trees trees-back" aria-hidden="true"></div>
+        <div class="trees trees-front" aria-hidden="true"></div>
+
+        <button id="cottage-door" class="cottage" type="button" aria-label="敲小屋的门">
+          <span class="chimney"></span>
+          <span class="roof"></span>
+          <span class="wall">
+            <span class="window window-left"></span>
+            <span class="window window-right"></span>
+            <span class="door"></span>
+            <span class="porch-light"></span>
+          </span>
+        </button>
+
+        <div class="pet-zone">
+          <button id="pixel-dog" class="pixel-dog" type="button" aria-label="和小狗互动">
+            <span class="dog-tail"></span>
+            <span class="dog-body"></span>
+            <span class="dog-head">
+              <span class="dog-ear ear-left"></span>
+              <span class="dog-ear ear-right"></span>
+              <span class="dog-face"></span>
+            </span>
+            <span class="dog-leg leg-one"></span>
+            <span class="dog-leg leg-two"></span>
+          </button>
+          <div id="pet-bubble" class="pet-bubble">小瑶，欢迎回到森林小屋。</div>
+        </div>
+      </div>
+
+      <form id="command-form" class="command-panel">
+        <label for="command-input">和小狗说句话</label>
+        <div class="command-row">
+          <input id="command-input" autocomplete="off" placeholder="试试：小狗打滚 / 换成星空 / 喂小狗 / 洗澡 / 摸摸头">
+          <button type="submit">发送</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="room-screen" class="screen room-screen" aria-labelledby="room-title">
+      <header class="room-header">
+        <button id="back-to-forest" class="ghost-button" type="button">回到森林</button>
+        <div>
+          <p>home unlocked</p>
+          <h2 id="room-title">生日快乐，小瑶</h2>
         </div>
       </header>
 
-      <div class="story-layout">
-        <figure class="photo-frame">
-          <img id="stage-image" src="XiYao_1.png" alt="memory photo">
-          <figcaption id="stage-caption">2011 开始，有些人一出现，就把童年变成会发光的底片。</figcaption>
-        </figure>
-        <article class="story-card">
-          <p id="stage-body"></p>
-          <div class="stage-thumbs" id="stage-thumbs" aria-label="photos in this chapter"></div>
-          <div class="button-row">
-            <button id="prev-btn" class="ghost-btn" type="button">上一页</button>
-            <button id="next-btn" type="button">继续往前走</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="gallery" class="screen gallery-screen" aria-labelledby="gallery-title">
-      <header class="gallery-top">
-        <div>
-          <p class="eyebrow">a pocket album</p>
-          <h2 id="gallery-title">这些年，被我们认真收藏过</h2>
+      <div class="room-stage">
+        <div class="pixel-window" aria-hidden="true"></div>
+        <div class="wall-shelf">
+          <button id="book-open" class="book-icon book-one" type="button" aria-label="打开书架上的信">
+            <span></span>
+          </button>
+          <button class="book-icon book-two" type="button" aria-label="一本发光的小书">
+            <span></span>
+          </button>
+          <button class="book-icon book-three" type="button" aria-label="一本橘色的小书">
+            <span></span>
+          </button>
         </div>
-        <button id="letter-btn" type="button">打开最后一封信</button>
-      </header>
-      <div id="gallery-grid" class="gallery-grid" aria-label="all memories"></div>
-    </section>
-
-    <section id="letter" class="screen letter-screen" aria-labelledby="letter-title">
-      <div class="letter-wrap">
-        <p class="eyebrow">one and only</p>
-        <h2 id="letter-title">给我最好的朋友</h2>
-        <div id="letter-pages" class="letter-pages"></div>
-        <div class="button-row letter-actions">
-          <button id="reveal-letter-btn" type="button">继续读</button>
-          <button id="restart-btn" class="ghost-btn" type="button">再看一遍</button>
+        <div class="fireplace" aria-hidden="true">
+          <span class="flame"></span>
+        </div>
+        <section class="indoor-pet-panel" aria-labelledby="indoor-pet-title">
+          <div class="indoor-pet-stage">
+            <button id="room-dog" class="pixel-dog room-dog" type="button" aria-label="和屋里的小狗互动">
+              <span class="dog-tail"></span>
+              <span class="dog-body"></span>
+              <span class="dog-head">
+                <span class="dog-ear ear-left"></span>
+                <span class="dog-ear ear-right"></span>
+                <span class="dog-face"></span>
+              </span>
+              <span class="dog-leg leg-one"></span>
+              <span class="dog-leg leg-two"></span>
+            </button>
+            <div id="room-pet-bubble" class="pet-bubble room-pet-bubble">小瑶，叫我我就进屋陪你。</div>
+          </div>
+          <div class="pet-actions" aria-label="屋里小狗互动按钮">
+            <h3 id="indoor-pet-title">呼叫小狗</h3>
+            <button id="call-pet" type="button">叫它进屋</button>
+            <button id="feed-pet" type="button">喂一口</button>
+            <button id="pet-pet" type="button">摸摸头</button>
+            <button id="shower-pet" type="button">洗澡</button>
+          </div>
+        </section>
+        <button id="letter-open" class="letter-icon" type="button" aria-label="打开相册信">
+          <span></span>
+        </button>
+        <div class="room-message">
+          <p>Best friends, chosen family. 希望你能感到我隔着很远很远也在爱你。我们会永远是朋友，也希望这只小狗能让你觉得暖暖的，像被毛茸茸的小可爱抱住一样。</p>
         </div>
       </div>
     </section>
   </main>
 
-  <div id="confetti" class="confetti" aria-hidden="true"></div>
+  <dialog id="lock-dialog" class="lock-dialog">
+    <form method="dialog" id="lock-form">
+      <div class="lock-mark" aria-hidden="true">⌂</div>
+      <h3>欢迎回家</h3>
+      <p>请输入正确的暗号，才能打开小屋的门。</p>
+      <label for="password-input">暗号</label>
+      <input id="password-input" autocomplete="off" placeholder="她的名字">
+      <menu>
+        <button id="cancel-lock" class="ghost-button" value="cancel" type="button">等一下</button>
+        <button value="default" type="submit">开门</button>
+      </menu>
+      <p id="lock-message" class="form-message"></p>
+    </form>
+  </dialog>
+
+  <dialog id="album-dialog" class="album-dialog">
+    <div class="album-top">
+      <div>
+        <p>memory letter</p>
+        <h3>这些年，被我们认真收藏过</h3>
+      </div>
+      <button id="close-album" class="icon-button" type="button" aria-label="关闭相册">×</button>
+    </div>
+    <div id="album-grid" class="album-grid" aria-label="照片相册"></div>
+  </dialog>
+
+  <dialog id="letter-dialog" class="letter-dialog">
+    <div class="letter-top">
+      <div>
+        <p>pixel book letter</p>
+        <h3>给我最好的朋友</h3>
+      </div>
+      <button id="close-letter" class="icon-button" type="button" aria-label="关闭书信">×</button>
+    </div>
+    <article class="letter-paper">
+      <p>我说出的前一半话你总能吐出后半个，哪怕没想到两个人也能在嗯嗯啊啊我懂你的语调里相视一笑。很多东西今生只可给你，保守直到永久，别人如何明白透，对不起，又一个不在你身边的生日，Do you feel my love from miles apart？</p>
+      <p>只要想起你，我就可以回到慢悠悠暖洋洋的童年里任何一个流光溢彩的晚霞日。不管是炎夏还是寒冬，我们心照不宣跳过公交站，只为一起走完多出来的一点点150米的路，然后依依不舍一步三回头说明天见，我们只能一起走150米，接下来我们要分别步行走过一个人的两站路，因为中间再没有经停目的地的公交车，但我们都知道那是值得的，尽管对于小孩子那是很长的一段路，尽管后面有一长段路只能自己走，但是明天我们还会再见的，现在那两站路变成了春秋，变成了孤单的太平洋，但是我们马上就还会再见的，我们总是会再见的，再见的时候会成长为更厉害的人，虽然我们的距离相隔很远，但是心总是很近，总是互相支持，虽然人生的艰难困苦总是无穷无尽，但是让我们一起奋斗一起面对！人生的风景我们一起去看！手拉手一起变成可靠的独当一面的很好的大人吧！生日快乐亲爱的小瑶💖</p>
+    </article>
+  </dialog>
+
+  <div id="sparkles" class="sparkles" aria-hidden="true"></div>
+  <div id="water-splash" class="water-splash" aria-hidden="true"></div>
   <script src="app.js"></script>
 </body>
 </html>
