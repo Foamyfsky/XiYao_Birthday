@@ -121,12 +121,12 @@ function timeGreeting() {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "你所在的地方";
   const place = timezone.includes("Sydney") ? "悉尼" : timezone.includes("Shanghai") ? "中国" : "你那边";
 
-  if (hour < 5) return `Hola，夜猫子小瑶。${place}的${season}夜里也要抱抱自己，现在还好吗？`;
+  if (hour < 5) return `Hola，夜里的小瑶。${place}的${season}夜里也要抱抱自己，现在还好吗？`;
   if (hour < 9) return `早安小瑶，${place}的${season}早晨已经亮起来啦。今天也慢慢来。`;
   if (hour < 12) return `上午好小瑶，小狗在${season}森林里等你发号施令。`;
   if (hour < 18) return `下午好小瑶，${place}现在适合喝点热的，再摸摸小狗。`;
   if (hour < 23) return `晚上好小瑶，小屋灯已经替你打开了，今天辛苦啦。`;
-  return `Hola，夜猫子小瑶。已经很晚了，森林小屋问你：现在心情还好吗？`;
+  return `Hola，夜里的小瑶。已经很晚了，森林小屋问你：现在心情还好吗？`;
 }
 
 function setBubble(text) {
